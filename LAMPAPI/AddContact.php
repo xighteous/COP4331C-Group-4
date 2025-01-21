@@ -2,13 +2,12 @@
 
     $inData = getRequestInfo();
 
-    $fName = $inData["fname"];
-    $lName = $inData["lname"];
+    $fName = $inData["fName"];
+    $lName = $inData["lName"];
     $number = $inData["number"];
     $email = $inData["email"];
     $userId = $inData["userId"];
 
-    // Possibly needs change for username + password
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
     if ($conn->connect_error) 
 	{
