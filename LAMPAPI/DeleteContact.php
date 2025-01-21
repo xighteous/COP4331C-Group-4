@@ -13,6 +13,11 @@
 	else
 	{
 		$stmt = $conn->prepare("DELETE FROM Contacts WHERE FirstName=? AND UserId=?");
+		$stmt->bind_param("ss", $fName, $userId);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+		returnWithError("");
 	}
 
     function getRequestInfo()
@@ -20,9 +25,15 @@
 		return json_decode(file_get_contents('php://input'), true);
 	}
 
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		echo $obj;
+	}
+
     function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 
