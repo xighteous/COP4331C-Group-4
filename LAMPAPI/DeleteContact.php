@@ -1,11 +1,18 @@
 <?php
 
-    $inData = getRequestInfo();
+	/*
+		Deletes contact from database
+		Input: {userId, ID}
+		Output: {error}
+	*/
 
-    $ID = $inData["ID"];
-    $userId = $inData["userId"];
+    	$inData = getRequestInfo();
 
-    $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+    	$ID = $inData["ID"];
+	$userId = $inData["userId"];
+
+    	// Main code block
+    	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -20,18 +27,21 @@
 		returnWithError("");
 	}
 
-    function getRequestInfo()
+    	// Fetches input data
+	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
 	}
 
+        // Sends output
 	function sendResultInfoAsJson( $obj )
 	{
 		header('Content-type: application/json');
 		echo $obj;
 	}
 
-    function returnWithError( $err )
+	// Returns $err as error JSON
+    	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
