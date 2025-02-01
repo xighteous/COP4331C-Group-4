@@ -24,7 +24,7 @@
 	{
 		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE (FirstName LIKE ? OR LastName LIKE ?) AND UserID=?");
 		$searchTerm = "%" . $search . "%";
-		$stmt->bind_param("sss", $searchTerm,, $searchTerm, $inData["userId"]);
+		$stmt->bind_param("ssi", $searchTerm,, $searchTerm, $userId);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
