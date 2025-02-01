@@ -2,10 +2,10 @@
 
     $inData = getRequestInfo();
 
-    $fName = $inData["fName"];
-    $lName = $inData["lName"];
-    $number = $inData["number"];
-    $email = $inData["email"];
+    $fName = $inData["firstName"];
+    $lName = $inData["lastName"];
+    $number = $inData["phoneNumber"];
+    $email = $inData["emailAddress"];
     $userId = $inData["userId"];
 	$ID = $inData["ID"];
 
