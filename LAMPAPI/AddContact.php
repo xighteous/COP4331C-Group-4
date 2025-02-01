@@ -4,8 +4,8 @@
 
     $fName = $inData["firstName"];
     $lName = $inData["lastName"];
-    $number = $inData["number"];
-    $email = $inData["email"];
+    $number = $inData["phoneNumber"];
+    $email = $inData["emailAddress"];
     $userId = $inData["userId"];
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
