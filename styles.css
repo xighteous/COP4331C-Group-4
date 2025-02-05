@@ -1,27 +1,61 @@
-
-/* POPPINS FONT */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-*{  
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
+/* header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
+} */
+
 body{
-    background: url("background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: green;
     background-attachment: fixed;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.wrapper{
+
+
+
+
+/* .navlist{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 110vh;
-    background: rgba(39, 39, 39, 0.4);
 }
+
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .45s ease;
+
+}
+
+.navlist a:hover{ 
+    border-bottom: 2px solid white;
+} */
+
+/* #menu-icon{
+    color: white;
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+} */
+
 .nav{
     position: fixed;
     top: 0;
@@ -34,23 +68,32 @@ body{
     z-index: 100;
 }
 .nav-logo p{
-    color: white;
-    font-size: 25px;
-    font-weight: 600;
+    font-family: 'Permanent Marker', cursive;
+    color: rgba(231, 203, 112, 0.7);
+    font-size: 45px;
+    font-weight: 300;
 }
 .nav-menu ul{
     display: flex;
 }
+/* home blog service etc */
 .nav-menu ul li{
     list-style-type: none;
 }
 .nav-menu ul li .link{
     text-decoration: none;
     font-weight: 500;
-    color: #fff;
+    color: #ffffff;
     padding-bottom: 15px;
     margin: 0 25px;
+    border-bottom: 2px solid transparent;
+    transition: all .45s ease;
 }
+
+.link:hover, .active{
+    border-bottom: 2px solid #fff;
+}
+
 .link:hover, .active{
     border-bottom: 2px solid #fff;
 }
@@ -58,12 +101,13 @@ body{
     width: 130px;
     height: 40px;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(231, 203, 112, 0.7);
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: .3s ease;
 }
+
 .btn:hover{
     background: rgba(255, 255, 255, 0.3);
 }
@@ -71,7 +115,7 @@ body{
     margin-left: 15px;
 }
 .btn.white-btn{
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(231, 203, 112, 0.7);
 }
 .btn.btn.white-btn:hover{
     background: rgba(255, 255, 255, 0.5);
@@ -79,50 +123,30 @@ body{
 .nav-menu-btn{
     display: none;
 }
-.form-box{
+
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 40.53%, #133917 85.52%);
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     align-items: center;
-    justify-content: center;
-    width: 512px;
-    height: 420px;
-    overflow: hidden;
-    z-index: 2;
+    gap: 2rem;
+ 
 }
-.login-container{
-    position: absolute;
-    left: 4px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    transition: .5s ease-in-out;
-}
-.register-container{
-    position: absolute;
-    right: -520px;
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    transition: .5s ease-in-out;
-}
-.top span{
-    color: #fff;
-    font-size: small;
-    padding: 10px 0;
+
+.wrapper{
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 40.53%, #133917 85.52%);
 }
-.top span a{
-    font-weight: 500;
-    color: #fff;
-    margin-left: 5px;
-}
-header{
-    color: #fff;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px 0 30px 0;
-}
+
+
 .two-forms{
     display: flex;
     gap: 10px;
@@ -160,7 +184,7 @@ header{
     border: none;
     border-radius: 30px;
     outline: none;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(231, 203, 112, 0.7);
     cursor: pointer;
     transition: .3s ease-in-out;
 }
@@ -186,6 +210,171 @@ header{
 .two label a:hover{
     text-decoration: underline;
 }
+
+
+/* section{
+    padding: 0 19%;
+} */
+
+/* .hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-text h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 80px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-text p{
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+
+
+.hero-text a{
+    display: inline-block;
+    color: white;
+    background: #4d9559;
+    border: 1px solid transparent;
+    padding: 12px 30px; 
+    border-radius: 50px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .33s ease;
+}
+
+.hero-text a:hover{
+    background: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.ctaa{
+    background: transparent;
+    border: 1px solid white;
+    margin-left: 30px;
+}
+
+.hero-text a.ctaa i{
+    vertical-align: middle;
+    margin-right: 5px;
+} */
+
+/* .icons{
+    position: absolute;
+    top: 50%;
+    padding: 0 9%;
+    transform: translateY(-50%);
+}
+
+.icon i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    color: darkgreen;
+} */
+
+.hero-img img{
+    width: 350px;
+    height: auto;
+}
+.hero-img {
+    position: fixed;
+    bottom: 20px; /* Keeps it in a fixed spot */
+    right: 80px; /* Moves it slightly */
+    opacity: 0.5;
+
+}
+
+
+.hero-img2 img{
+    width: 350px;
+    height: auto;
+}
+.hero-img2 {
+    position: fixed;
+    bottom: 20px; /* Keeps it in a fixed spot */
+    left: 80px; /* Moves it slightly */
+    opacity: 0.5;
+
+}
+
+
+
+
+
+
+
+/* user entry and login */
+
+
+
+.form-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 420px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.login-container{
+    position: absolute;
+    left: 4px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+.register-container{
+    position: absolute;
+    right: -520px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+
+.top span{
+    color: #fff;
+    font-size: small;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.top span a{
+    font-weight: 500;
+    color: #fff;
+    margin-left: 5px;
+}
+header{
+    color: rgba(231, 203, 112, 0.7);
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+
 @media only screen and (max-width: 786px){
     .nav-button{
         display: none;
@@ -204,6 +393,7 @@ header{
         backdrop-filter: blur(20px);
         transition: .3s;
     }
+
     .nav-menu ul{
         flex-direction: column;
         text-align: center;
@@ -232,6 +422,7 @@ header{
         width: 100%;
         height: 500px;
     }
+    
     .register-container, .login-container{
         width: 100%;
         padding: 0 20px;

@@ -1,0 +1,496 @@
+/* Top navigation bar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* for background image */
+body{
+    background: url("background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+
+
+.content {
+    padding: 1px 10px;
+    height: auto; /* Allow content to expand naturally */
+    margin-top: 5%; /* Space for the new top nav */
+    margin-left: 0; /* Remove the side nav spacing */
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  
+    background: rgba(39, 39, 39, 0.4);
+}
+
+.loggedInDiv {
+    font-family: 'Poppins', sans-serif;
+    font-weight: small;
+    font-size: clamp(16px, 2vw, 30px);
+    align-self: center;
+    
+
+}
+
+.accessUIDiv {
+    margin: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    align-self: center;
+}
+
+.column {
+    display: inline-block;
+    padding: 10px 10px;
+    vertical-align: middle;
+    text-align: center; /* Ensures alignment for text/buttons */
+}
+
+
+.column button {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 12px; /* Slightly reduced for better mobile fit */
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 16px; /* Adjusted for better icon scaling */
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tables {
+    align-self: center;
+    align-items: center; /* Centers vertically */
+}
+
+
+
+.addContacts {
+    align-self: center;
+}
+
+#addMe input {
+    width: 100%;
+    padding: 12px; /* Adds spacing inside input boxes */
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px; /* Makes input fields rounded */
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+#addMe>input:valid {
+    border: 2px solid #009345;
+    ;
+}
+
+#addMe>input:invalid {
+    border: 2px solid red;
+}
+
+#addMe input:invalid:required {
+    background-color: rgba(255, 0, 0, 0.1); /* Light red background for required fields */
+}
+
+/* add contacts table formatting */
+#addMe {
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    border-radius: 17px;
+    position: relative;
+    background: rgba(234, 207, 155, 0.95);
+    max-width: 90%;
+    margin: 0 auto 50px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+#contacts td input {
+    border-radius: 10px; /* More subtle roundness */
+    font-family: 'Poppins', sans-serif; /* Matches the rest of our site */
+    outline: none;
+    background: #fbde99;
+    width: 100%;
+    border: 2px solid #ccc; /* Adds slight border to define inputs */
+    margin: 0 0 10px;
+    padding: 12px; /* Slightly larger padding for better UX */
+    box-sizing: border-box;
+    font-size: 16px; /* Increased for readability */
+    transition: border 0.2s ease-in-out;
+}
+
+/* Focus effect for better user experience */
+#contacts td input:focus {
+    border: 2px solid #007D2F; /* Green border when focused */
+    background: #f5e2b8; /* Lightens background slightly */
+}
+
+
+
+
+
+.btn {
+    color: #5d0d9e;
+    font-family: 'Poppins', sans-serif; /* Matches rest of site */
+    font-weight: small;
+    font-size: clamp(14px, 2vw, 20px); /* Ensures good scaling */
+    background: rgba(155, 188, 115, 0.2); /* Subtle background */
+    border: 2px solid #4f007d;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background: #000c7d; /* Turns green */
+    color: #fff; /* White text */
+    border: 2px solid #02005f;
+}
+
+.search-container {
+    background: rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif; /* Matches your site font */
+    height: 50px; /* Slightly increased for better usability */
+    width: 100%;
+    max-width: 400px; /* Prevents it from being too wide */
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Ensures button aligns correctly */
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+}
+
+/* Search Input */
+.search-container .search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%; /* Fully expands inside */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    transition: width 0.5s ease-in-out;
+    padding: 5px;
+}
+
+/* Hover Effect - Works Better */
+.search-container:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+span, p {
+    color: rgb(164, 0, 0);
+    font-family: 'Poppins', sans-serif; /* Matches the rest of the site */
+}
+
+
+/* Contacts Table - Responsive Layout */
+#contactsTable {
+    display: block;
+    max-height: 500px; /* Prevents overflow */
+    overflow-y: auto; /* Allows scrolling if needed */
+    justify-content: center; /* Centers the table horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+
+
+/* Table Formatting */
+table {
+    width: 80%;
+    max-width: 900px;
+    border-collapse: collapse; /* Improves structure */
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Scrollable Content */
+.tbl-content {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    justify-content: center; /* Centers the table horizontally */
+    align-items: center; /* Centers vertically */
+    border-radius: 30px;
+}
+
+/* Table Headers for (for words on the table*/
+#contacts th {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px;
+    text-align: center;
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers the table horizontally */
+    
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.9);
+    
+}
+
+
+
+
+/* Table Cells */
+#contacts td {
+    padding: 12px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 500;
+    color: #66471b;
+    background-color: antiquewhite;
+}
+
+/* Table Hover Effect */
+#contacts tr:hover {
+    background-color: #007D2F; /* Makes hover color match theme */
+    color: white;
+}
+
+#contacts td span {
+    display: block;
+    white-space: normal; /* Allows text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text is too long */
+    font-size: 100%;
+    color: #66471b;
+    max-width: 100%; /* Prevents overflow */
+}
+
+
+/* Custom Scrollbar for Webkit Browsers */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/* 🔹 New Top Navigation */
+.topnav {
+    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+
+/* 🔹 Logo inside Navigation */
+.topnav img {
+    width: 50px; /* Adjust for better visibility */
+    height: auto;
+    margin-left: 15px;
+}
+
+/* 🔹 Navigation Links */
+.topnav a {
+    font-family: 'Poppins', sans-serif; /* Matches your site's font */
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.topnav a:hover {
+    color: #897261;
+}
+
+/* 🔹 Navigation Buttons */
+.topnav .buttons {
+    display: flex;
+    gap: 15px; /* Adds spacing between buttons */
+}
+
+.topnav button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    color: #fadbc7;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.topnav button:hover {
+    color: #a51111;
+}
+
+/* 🔹 Mobile Optimization (For Screens ≤ 700px) */
+@media screen and (max-width: 700px) {
+    body {
+        background-image: url('../images/backgroundmobile2.png'); /* Mobile Background */
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* 🔹 Make Top Navigation More Compact */
+    .topnav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .topnav img {
+        width: 40px; /* Reduce logo size */
+    }
+
+    .topnav a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .topnav .buttons {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .topnav button {
+        font-size: 16px;
+        width: 100%; /* Full-width buttons */
+    }
+
+    /* 🔹 Make Content Fit Mobile Screens */
+    .content {
+        padding: 10px;
+        margin-top: 80px; /* Ensures space below navigation */
+        align-items: center; /* Centers content */
+    }
+
+    /* 🔹 Resize Buttons for Touch Screens */
+    .column button {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        font-size: 10px;
+        margin: 5px;
+    }
+
+    /* 🔹 Adjust Forms for Mobile */
+    #addMe {
+        max-width: 95%; /* Prevent form from being too wide */
+        padding: 20px;
+    }
+
+    #addMe input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* 🔹 Search Bar Mobile Adjustments */
+    .search-container {
+        height: 40px;
+        max-width: 90%; /* Make search bar fit better */
+        padding: 8px 15px;
+    }
+
+    .search-container .search-input {
+        font-size: 14px;
+    }
+
+    /* 🔹 Resize Table for Mobile */
+    #contactsTable {
+        max-height: 400px;
+        overflow-x: auto; /* Allows horizontal scrolling */
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    #contacts td,
+    #contacts th {
+        padding: 10px; /* Reduce padding */
+    }
+}
+
+/* 🔹 Extra Small Screens (≤ 400px) */
+@media screen and (max-width: 400px) {
+    .topnav img {
+        width: 35px;
+    }
+
+    .topnav a {
+        font-size: 14px;
+    }
+
+    .topnav button {
+        font-size: 14px;
+    }
+
+    .search-container {
+        height: 35px;
+        max-width: 95%;
+        padding: 5px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    #contacts td,
+    #contacts th {
+        padding: 8px;
+    }
+}
+
+
+
+

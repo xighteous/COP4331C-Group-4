@@ -1,28 +1,53 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<link href="style.css>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles.css">
-    <title>COP4331 Group 4| Login & Registration</title>
+	<title>COP 4331 Contact Manager</title>
+	<meta name = "viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+	<!-- custom css link-->
+    <link href="styles.css" rel="stylesheet" type="text/css">	
+	<!-- google font link-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- boxicons link-->
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- remixicon link-->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<!-- more-google-fonts-link -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&
+family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 </head>
 <body>
- <div class="wrapper">
-    <nav class="nav">
+	<div class="wrapper">
+		<!-- rotating image -->
+		<div class="hero-img">
+			<div class="rotating-image">
+				<div class="rotating-image__track">
+					<img src="images/goblingang.png" alt="Goblin Icon">
+
+					
+				</div>
+			</div>
+		</div>
+		
+	<nav class="nav">
         <div class="nav-logo">
-            <p>LOGO .</p>
+			<a href="https://github.com/xighteous/COP4331C-Group-4" target="_blank" rel="noopener noreferrer">
+            <p>GreenBook</p>
+			</a>
         </div>
         <div class="nav-menu" id="navMenu">
             <ul>
                 <li><a href="#" class="link active">Home</a></li>
-                <li><a href="#" class="link">Blog</a></li>
-                <li><a href="#" class="link">Services</a></li>
-                <li><a href="#" class="link">About</a></li>
+                <li><a href="about.html" class="link">About</a></li>
             </ul>
         </div>
         <div class="nav-button">
@@ -32,121 +57,185 @@
         <div class="nav-menu-btn">
             <i class="bx bx-menu" onclick="myMenuFunction()"></i>
         </div>
+    
+		
     </nav>
 
-<!----------------------------- Form box ----------------------------------->    
-    <div class="form-box">
-        
-        <!------------------- login form -------------------------->
+	<!-- <header>
+		<a href="#" class="logo">COP 4331</a>
+		<ul class = "navlist">
+			<li><a href = "#">Home</a></li>
+			<li><a href = "#">About</a></li>
+			<li><a href = "#" >Login</a></li>
+			<li><a href = "#">Register</a></li>
+		</ul>
 
-        <div class="login-container" id="login">
-            <div class="top">
-                <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
-                <header>Login</header>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Username or Email">
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Sign In">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="login-check">
-                    <label for="login-check"> Remember Me</label>
-                </div>
-                <div class="two">
-                    <label><a href="#">Forgot password?</a></label>
-                </div>
-            </div>
-        </div>
+		<div class= "bx bx-menu" id = "menu-icon"></div>
+	</header> -->
 
-        <!------------------- registration form -------------------------->
-        <div class="register-container" id="register">
-            <div class="top">
-                <span>Have an account? <a href="#" onclick="login()">Login</a></span>
-                <header>Sign Up</header>
-            </div>
-            <div class="two-forms">
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Firstname">
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Lastname">
-                    <i class="bx bx-user"></i>
-                </div>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="Email">
-                <i class="bx bx-envelope"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Password">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" value="Register">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="register-check">
-                    <label for="register-check"> Remember Me</label>
-                </div>
-                <div class="two">
-                    <label><a href="#">Terms & conditions</a></label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>   
+	<!-- <section class="hero">
+	<div class="hero-text">
+		<h5>#1 Contact Manager</h5>
+		<h4>By Goblins For Goblins</h4>
+	    <h1>GreenBook</h1>
+		<p>Join the hundreds of goblins, as you build your own tribe, <br> raise a clan, Explore, Loot, Hord, while staying connected!!</p>
+		<a href = "#">Login</a>
+		<a href = "#" class="ctaa"><i class="ri-play-fill"></i>Register</a>
+	</div>
+	<div class="hero-img">
+		<img src="avatar.png" alt="Goblin Icon">
+	</div>
+	</section> -->
+<!-- 
+	<div class="icons">
+		<a href="#"><i class="ri-copper-coin-line"></i></a>
+		<a href="#"><i class="ri-copper-diamond-line"></i></a>
+		<a href="#"><i class="ri-copper-coin-line"></i></a>
+		<a href="#"><i class="ri-copper-diamond-line"></i></a>
+		<a href="#"><i class="ri-copper-coin-line"></i></a>
+		<a href="#"><i class="ri-copper-diamond-line"></i></a>
+		<a href="#"><i class="ri-copper-coin-line"></i></a>
+	</div> -->
 
 
-<script>
+	<div class="form-box">
+
+		<!------------------- Login Form -------------------------->
+	
+		<div class="login-container" id="login">
+			<div class="top">
+				<span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+				<header>Login</header>
+			</div>
+			<div class="input-box">
+				<input type="text" id="loginName" class="input-field" placeholder="Username or Email">
+				<i class="bx bx-user"></i>
+			</div>
+			<div class="input-box">
+				<input type="password" id="loginPassword" class="input-field" placeholder="Password">
+				<i class="bx bx-lock-alt"></i>
+			</div>
+			<div class="input-box">
+				<button type="button" class="submit" onclick="doLogin();">Sign In</button>
+			</div>
+			<div class="two-col">
+				<div class="one">
+					<input type="checkbox" id="login-check">
+					<label for="login-check"> Remember Me</label>
+				</div>
+				<div class="two">
+					<label><a href="#">Forgot password?</a></label>
+				</div>
+			</div>
+			<span id="loginResult"></span>
+		</div>
+	
+		<!------------------- Registration Form -------------------------->
+		<div class="register-container" id="register">
+			<div class="top">
+				<span>Have an account? <a href="#" onclick="login()">Login</a></span>
+				<header>Sign Up</header>
+			</div>
+			<div class="two-forms">
+				<div class="input-box">
+					<input type="text" id="registerFirstName" class="input-field" placeholder="First Name">
+					<i class="bx bx-user"></i>
+				</div>
+				<div class="input-box">
+					<input type="text" id="registerLastName" class="input-field" placeholder="Last Name">
+					<i class="bx bx-user"></i>
+				</div>
+			</div>
+			<div class="input-box">
+				<input type="text" id="registerLoginName" class="input-field" placeholder="Username">
+				<i class="bx bx-user"></i>
+			</div>
+			<div class="input-box">
+				<input type="password" id="registerPassword" class="input-field" placeholder="Password">
+				<i class="bx bx-lock-alt"></i>
+			</div>
+			<div class="input-box">
+				<button type="button" class="submit" onclick="doRegister();">Register</button>
+			</div>
+			<div class="two-col">
+				<div class="one">
+					<input type="checkbox" id="register-check">
+					<label for="register-check"> Remember Me</label>
+				</div>
+				<div class="two">
+					<label><a href="#">Terms & conditions</a></label>
+				</div>
+			</div>
+			<span id="registerResult"></span>
+		</div>
+	
+	</div>
+	
+
+
+
+<!-- <div class = "form-box">
+<div id="loginDiv">
+	<span id="inner-title">PLEASE LOG IN</span>
+	<input type="text" id="loginName" placeholder="Username" /><br />
+	<input type="password" id="loginPassword" placeholder="Password"/><br />
+	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Login </button>
+	<span id="loginResult"></span>
+</div>
+
+<div id="registerDiv">
+	<span id="inner-title">REGISTER</span>
+	<input type="text" id="registerFirstName" placeholder="First Name" /><br />
+	<input type="text" id="registerLastName" placeholder="Last Name" /><br />
+	<input type="text" id="registerLoginName" placeholder="Username" /><br />
+	<input type="password" id="registerPassword" placeholder="Password"/><br />
+	<button type="button" id="registerButton" class="buttons" onclick="doRegister();"> Register </button>
+	<span id="registerResult"></span>
+</div>
+</div> -->
+<script src = "script.js"></script>
+</div>
+
+ <script>
    
-   function myMenuFunction() {
-    var i = document.getElementById("navMenu");
-
-    if(i.className === "nav-menu") {
-        i.className += " responsive";
-    } else {
-        i.className = "nav-menu";
-    }
-   }
+	function myMenuFunction() {
+	 var i = document.getElementById("navMenu");
  
-</script>
-
-<script>
-
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-
-    function login() {
-        x.style.left = "4px";
-        y.style.right = "-520px";
-        a.className += " white-btn";
-        b.className = "btn";
-        x.style.opacity = 1;
-        y.style.opacity = 0;
-    }
-
-    function register() {
-        x.style.left = "-510px";
-        y.style.right = "5px";
-        a.className = "btn";
-        b.className += " white-btn";
-        x.style.opacity = 0;
-        y.style.opacity = 1;
-    }
-
-</script>
+	 if(i.className === "nav-menu") {
+		 i.className += " responsive";
+	 } else {
+		 i.className = "nav-menu";
+	 }
+	}
+  
+ </script>
+ 
+ <script>
+ 
+	 var a = document.getElementById("loginBtn");
+	 var b = document.getElementById("registerBtn");
+	 var x = document.getElementById("login");
+	 var y = document.getElementById("register");
+ 
+	 function login() {
+		 x.style.left = "4px";
+		 y.style.right = "-520px";
+		 a.className += " white-btn";
+		 b.className = "btn";
+		 x.style.opacity = 1;
+		 y.style.opacity = 0;
+	 }
+ 
+	 function register() {
+		 x.style.left = "-510px";
+		 y.style.right = "5px";
+		 a.className = "btn";
+		 b.className += " white-btn";
+		 x.style.opacity = 0;
+		 y.style.opacity = 1;
+	 }
+ 
+ </script>
 
 </body>
 </html>

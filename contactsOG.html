@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<!-- main content -->
+<head>
+    <link href="contacts.css">
+    <!-- Use to adjust screen for mobile use gets the right font. -->
+    <title>Group4 Contact Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "contacts.css" />
+
+    <!-- LIKELY HAS SOMETHING TO DO WITH THIS, PROBABLY NEED A QUERY INTO OUR DATABASE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Contact Page</title>
+    <script type="text/javascript" src="js/code.js"></script>
+    <!-- find out what this code does -->
+    <script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			readCookie();
+			loadContacts();
+		}, false);
+	</script>
+    
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- op Navigation includes that icon.png (doesnt exist yet), Contact, About, and a Logout button-->
+    <nav class="topnav">
+        <img id="logo" src="images/icon.png" alt="logo image">
+        <a href="contacts.html">Contacts</a>
+        <a href="members.html">About Us</a>
+        <button type="button" id="logoutButton" class="buttons" onclick="doLogout();">Logout</button>
+    </nav> 
+
+
+
+ <div class="content">
+    <div id="loggedInDiv">
+        <span id="userName"></span><br />
+        <button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+    </div>
+    
+    <div class="accessUIDiv">
+        <br />
+        <div class="column">
+            <div class="search-container">
+                <input onkeyup=searchContacts() type="text" name="search" id="searchText" placeholder="Search..."
+                    class="search-input">
+                <a href="#" class="search-btn" type="button" id="searchContactButton" class="buttons font"
+                    onclick="searchContacts();"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+        <div class="column"><button type="button" onclick=loadContacts()><i class="fa fa-refresh"
+                    style="font-size:30px;color:rgba(155, 188, 115, 0.9)" aria-hidden="true"></i></button></div>
+        <div class="column"><button type="button" onclick=showTable()> <i class="fas fa-user-plus"
+                    style="font-size:27px;color:rgba(155, 188, 115, 0.9)"></i></button></div>
+    </div>
+    <!--add contact form-->
+    <div class="addContact">
+        <form id="addMe" action="" method="post">
+            <input type="text" id="contactTextFirst" placeholder="First Name" required>
+            <input type="text" id="contactTextLast" placeholder="Last Name" required>
+            <input type="text" id="contactTextNumber" placeholder="XXX-XXX-XXXX" required
+                pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+            <input type="text" id="contactTextEmail" placeholder="name@email.com"
+                pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+            <button type="button" id="addContactButton" class="buttons font" onclick="addContact();"> Add Contact
+            </button>
+        </form>
+    </div>
+    <!--contact table-->
+    <div class="tables">
+        <div class="tbl-content" id="contactsTable">
+            <table id="contacts" cellpadding="0" cellspacing="0" border="0">
+                <thread>
+                    <tr>
+                        <th>First&nbspName</th>
+                        <th>Last&nbspName</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th></th>
+                    </tr>
+                </thread>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+ </div>
+</div>
+</body>
+
+
+
+
+
+
+
+</body>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<!-- main content -->
+
+<head>
+    <!--<link href="style.css">-->
+    <!-- Use to adjust screen for mobile use gets the right font. -->
+    <title>Group4 Contact Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contacts.css" />
+
+    <!-- LIKELY HAS SOMETHING TO DO WITH THIS, PROBABLY NEED A QUERY INTO OUR DATABASE -->
+    <!-- custom css link-->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <!-- google font link-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <!-- boxicons link-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- remixicon link-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    
+
+    <!-- more-google-fonts-link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&
+    family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    
+    <title>Contact Page</title>
+    <script type="text/javascript" src="js/code.js"></script>
+    <!-- find out what this code does -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+
+            readCookie(); // causes minor issues
+            loadContacts();
+        }, false);
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Top Navigation includes that icon.png (doesnt exist yet), Contact, About, and a Logout button-->
+
+        <!-- rotating image -->
+		<div class="hero-img">
+			<div class="rotating-image">
+				<div class="rotating-image__track">
+					<img src="images/goblingang.png" alt="Goblin Icon">
+
+					
+				</div>
+			</div>
+		</div>
+
+        <!-- Top Navigation -->
+        <nav class="nav">
+            <!-- Left-aligned logo -->
+            <div class="nav-logo">
+                <p>GreenBook .</p>
+            </div>
+
+            <!-- Centered navigation links -->
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#" class="link active">Contacts</a></li>
+                    <li><a href="about.html" class="link">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Right-aligned logout button -->
+            <div class="nav-button">
+                <button type="btn" id="logoutButton" class="logout-button" onclick="doLogout();">Logout</button>
+            </div>
+
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+
+
+
+
+
+
+
+
+        <div class="content">
+            <div class="loggedInDiv">
+                <span style="color:#ffffff" id="userName">Welcome Home</span>
+            </div>
+            <div class=".form-box">
+                <br />
+                <div class="column">
+                    <div class="search-container">
+                        <input onkeyup=searchContacts() type="text" name="search" id="searchText"
+                            placeholder="Search..." class="search-input">
+
+
+
+                        <a href="#" class="search-btn" type="button" id="searchContactButton" class="buttons font"
+                            onclick="searchContacts();"><i class="fas fa-search"></i></a>
+                           
+                        <i class="bx bx-user"></i>
+
+                            
+                    </div>
+                </div>
+                <div class="column"><button type="button" onclick=loadContacts()><i class="fa fa-refresh"
+                            style="font-size:30px;color:rgba(155, 188, 115, 0.9)" aria-hidden="true"></i></button>
+                            
+                                
+
+                                <div class="icon">
+                                    <i class="ri-refresh-line"></i>
+                                </div>
+                            
+                        </div>
+                            
+                <div class="column"><button type="button" onclick=showTable()> <i class="fas fa-user-plus"
+                            style="font-size:27px;color:rgba(155, 188, 115, 0.9)"></i></button>
+                            <div class="icon">
+                                <i class="ri-add-line"></i>
+                            </div>
+                                
+                            
+                        </div>
+                            
+            </div>
+            <!--add contact form-->
+            <div class="addContacts">
+                <form id="addMe" action="" method="post">
+                    <input type="text" id="contactTextFirst" placeholder="First Name" required>
+                    <input type="text" id="contactTextLast" placeholder="Last Name" required>
+                    <input type="text" id="contactTextNumber" placeholder="XXX-XXX-XXXX" required
+                        pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+                    <input type="text" id="contactTextEmail" placeholder="name@email.com"
+                        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+                    <button type="button" id="addContactButton" class="buttons font" onclick="addContact();"> Add
+                        Contact
+                    </button>
+                </form>
+            </div>
+            <!--contact table-->
+            <div class="tables">
+                <div class="tbl-content" id="contactsTable">
+                    <table id="contacts" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>First&nbspName</th>
+                                <th>Last&nbspName</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</body>
